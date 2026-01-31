@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Garde-Corps Site - STICK-IT FRANCE
 
-## Getting Started
+Site web optimisé SEO pour la vente de garde-corps sur mesure.
 
-First, run the development server:
+## Technologies
+
+- **Frontend**: Next.js 14+ (App Router), TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB
+- **Deployment**: Docker, Nginx
+
+## Fonctionnalités
+
+- ✅ Pages SEO optimisées (garde-corps par matériau et usage)
+- ✅ Formulaire de devis avec validation
+- ✅ Système de recommandation AI (règles)
+- ✅ Back-office administration (leads, pages, projets)
+- ✅ Structured Data (JSON-LD)
+- ✅ Sitemap et robots.txt automatiques
+- ✅ Design responsive et moderne
+- ✅ Boutons d'appel flottants
+
+## Installation Locale
 
 ```bash
+# Cloner le projet
+cd garde-corps-site
+
+# Installer les dépendances
+npm install
+
+# Copier le fichier d'environnement
+cp .env.example .env.local
+
+# Lancer MongoDB (Docker)
+docker run -d -p 27017:27017 --name mongodb mongo:7
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables d'Environnement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Créer un fichier `.env.local` :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+MONGODB_URI=mongodb://localhost:27017/garde-corps
+JWT_SECRET=votre-secret-jwt-très-sécurisé
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_COMPANY_NAME=STICK-IT FRANCE
+NEXT_PUBLIC_COMPANY_PHONE=03 20 34 50 30
+NEXT_PUBLIC_COMPANY_EMAIL=contact@stickit-france.com
+```
 
-## Learn More
+## Déploiement Production (Docker)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# 1. Configurer les variables d'environnement
+export JWT_SECRET="votre-secret-production"
+export SITE_URL="https://garde-corps.fr"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 2. Construire et lancer les containers
+docker-compose up -d --build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 3. Configurer SSL (après DNS)
+chmod +x scripts/setup-ssl.sh
+./scripts/setup-ssl.sh
+```
 
-## Deploy on Vercel
+## Structure du Projet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+garde-corps-site/
+├── src/
+│   ├── app/                    # Pages Next.js (App Router)
+│   │   ├── (public)/          # Pages publiques
+│   │   ├── admin/             # Back-office
+│   │   └── api/               # API Routes
+│   ├── components/            # Composants React
+│   │   ├── ui/               # Composants UI de base
+│   │   ├── layout/           # Header, Footer, etc.
+│   │   ├── forms/            # Formulaires
+│   │   ├── seo/              # JSON-LD, Breadcrumb
+│   │   └── ai/               # Recommandation AI
+│   └── lib/                   # Utilitaires
+│       ├── db/               # MongoDB models
+│       └── constants.ts      # Constantes
+├── docker/                    # Configuration Docker
+├── public/                    # Assets statiques
+└── scripts/                   # Scripts de maintenance
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Administration
+
+Accès : `https://votre-domaine.fr/admin`
+
+Credentials par défaut (à changer !) :
+- Email: `admin@stickit-france.com`
+- Password: `admin123`
+
+## API Endpoints
+
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/leads` | Soumettre un lead |
+| POST | `/api/reco` | Obtenir des recommandations |
+| POST | `/api/events` | Logger un événement |
+| GET | `/api/health` | Vérifier l'état du serveur |
+
+## SEO
+
+Le site est optimisé pour les mots-clés :
+- garde-corps / garde corps
+- garde-corps inox / verre / aluminium
+- garde-corps balcon / terrasse / escalier / piscine
+- devis garde-corps / prix garde-corps
+
+Chaque page inclut :
+- Meta title/description optimisés
+- Structured Data (LocalBusiness, Product, FAQ, Breadcrumb)
+- Canonical URL
+- Open Graph tags
+
+## Maintenance
+
+```bash
+# Backup de la base de données
+./scripts/backup-db.sh
+
+# Voir les logs
+docker-compose logs -f web
+
+# Redémarrer les services
+docker-compose restart
+```
+
+## Support
+
+STICK-IT FRANCE - contact@stickit-france.com

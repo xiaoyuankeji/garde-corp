@@ -1,0 +1,39 @@
+version: '3.8'
+
+# Development Docker Compose - Use this for local development
+# Run: docker-compose -f docker-compose.dev.yml up
+
+services:
+  # Next.js dev server (with hot reload)
+  web:
+    image: node:20-alpine
+    container_name: garde-corps-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/garde-corps
+      - JWT_SECRET=dev-secret-key
+      - NEXT_PUBLIC_SITE_URL=http://localhost:3000
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - mongo
+
+  # MongoDB Database
+  mongo:
+    image: mongo:7
+    container_name: garde-corps-mongo-dev
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-dev-data:/data/db
+      - ./docker/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    environment:
+      - MONGO_INITDB_DATABASE=garde-corps
+
+volumes:
+  mongo-dev-data:
