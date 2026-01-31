@@ -11,6 +11,14 @@ import { COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Garde-Corps Inox Sur Mesure | Acier Inoxydable 304/316 | Nord",
   description: "Garde-corps en inox sur mesure : acier inoxydable 304 ou 316 pour environnements marins. Design moderne, durabilité exceptionnelle. Devis gratuit, fabrication française.",
+  keywords: [
+    "garde-corps inox",
+    "garde-corps inox 316",
+    "garde-corps inox 304",
+    "garde-corps inox lille",
+    "garde-corps inox nord",
+    "garde-corps inox sur mesure"
+  ],
 };
 
 const specs = [

@@ -38,7 +38,7 @@ export function HeroSection() {
 
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl animate-slide-up" style={{ animationDelay: '0.3s' }}>
             Fabricant installateur de garde-corps sur mesure en Inox, Verre et Aluminium. 
-            Transformez votre balcon, terrasse ou escalier dès aujourd&apos;hui.
+            Spécialiste du garde-corps inox dans le Nord et à Lille, pour balcon, terrasse ou escalier.
           </p>
 
           {/* CTA Group */}

@@ -98,8 +98,21 @@ export const NAV_ITEMS = [
 export const SEO = {
   siteName: 'Garde-Corps Sur Mesure | STICK-IT FRANCE',
   defaultTitle: 'Garde-Corps Inox, Verre & Aluminium Sur Mesure | Nord & Lille',
-  defaultDescription: 'Spécialiste garde-corps sur mesure en inox, verre et aluminium. Devis gratuit pour balcon, terrasse, escalier, piscine. Installation professionnelle Nord & région lilloise.',
-  defaultKeywords: ['garde-corps', 'garde corps', 'garde-corps inox', 'garde-corps verre', 'garde-corps aluminium', 'garde-corps sur mesure', 'devis garde-corps', 'prix garde-corps', 'Nord', 'Lille'],
+  defaultDescription: 'Spécialiste garde-corps inox sur mesure (inox 304/316), verre et aluminium. Devis gratuit pour balcon, terrasse, escalier, piscine. Installation professionnelle Nord & région lilloise.',
+  defaultKeywords: [
+    'garde-corps',
+    'garde corps',
+    'garde-corps inox',
+    'garde-corps inox lille',
+    'garde-corps inox nord',
+    'garde-corps verre',
+    'garde-corps aluminium',
+    'garde-corps sur mesure',
+    'devis garde-corps',
+    'prix garde-corps',
+    'Nord',
+    'Lille'
+  ],
   locale: 'fr_FR',
   type: 'website'
 };

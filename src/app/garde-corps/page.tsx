@@ -87,6 +87,7 @@ export default function GardeCorpsPage() {
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                 Spécialiste du garde-corps depuis plus de 20 ans, nous concevons et installons 
                 des solutions sur mesure pour sécuriser vos balcons, terrasses, escaliers et piscines.
+                Notre expertise en garde-corps inox est reconnue dans le Nord et à Lille.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">

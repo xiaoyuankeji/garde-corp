@@ -43,7 +43,7 @@ export function MaterialsSection() {
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
             Nous sélectionnons rigoureusement nos matériaux pour garantir sécurité, 
-            durabilité et esthétique à votre habitat.
+            durabilité et esthétique à votre habitat, notamment pour les garde-corps inox.
           </p>
         </div>
 

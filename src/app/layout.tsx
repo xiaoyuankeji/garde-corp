@@ -33,11 +33,20 @@ export const metadata: Metadata = {
     siteName: SEO.siteName,
     title: SEO.defaultTitle,
     description: SEO.defaultDescription,
+    images: [
+      {
+        url: "/images/verre-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Garde-corps inox, verre et aluminium sur mesure",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SEO.defaultTitle,
     description: SEO.defaultDescription,
+    images: ["/images/verre-hero.jpg"],
   },
   robots: {
     index: true,
