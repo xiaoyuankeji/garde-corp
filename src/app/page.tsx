@@ -6,7 +6,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { FAQSection } from "@/components/home/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Garde-Corps Inox Sur Mesure | Nord & Lille",
+  title: "Garde corps | Rambarde | Tendeur de câble | garde-corps inox | filet inox | grillage-inox",
   description: "Fabricant garde-corps inox sur mesure (304/316) à Lille et dans le Nord. Verre, aluminium, pose professionnelle, devis gratuit sous 24h.",
   keywords: [
     "garde-corps inox",
