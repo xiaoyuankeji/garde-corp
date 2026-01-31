@@ -48,10 +48,15 @@ export function HeroSection() {
               className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 text-lg font-bold shadow-lg shadow-orange-500/30 hover:scale-105 transition-all duration-300"
               asChild
             >
-              <Link href="/devis-garde-corps" className="flex items-center gap-2">
+              <a
+                href="https://www.stickit-france.com/module/powerfulformgenerator/display?id=1"
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Devis Gratuit Express
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             
             <Button 
